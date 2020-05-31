@@ -69,18 +69,6 @@ wipayTransaction.verifyHash(process.env.MERCHANT_KEY) ? res.send("Transaction Su
 	verifyHash: (merchant_key) => 'boolean'
 }
 ```
-
-## UML diagrams
-Typical flow of using wipay on your website
-```mermaid
-sequenceDiagram
-User ->> Wipay Page: Enter Credit card details
-Wipay Page-->>Wipay Server: Process Transaction Details
-Wipay Server--x Your Server: Transaction results
-Note right of Wipay Server: Wipay sends the<br/>transaction results<br/>via a callback URL<br/>with query Params
-Your Server-->> User: Transaction result
-Note right of Wipay Server:Your server<br/>processes the<br/>transaction results<br/>using the<br/>wipay-transaction<br/>package and updates<br/> the user their<br/>payment was<br/>successful or failed
-```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
